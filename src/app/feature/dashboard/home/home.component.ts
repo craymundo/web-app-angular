@@ -3,6 +3,7 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
 import { DataTablesModule } from 'angular-datatables';
 import { ReplaceNullPipe } from 'src/app/shared/pipes/replace-null.pipe';
 
+import { ADTSettings } from 'angular-datatables/src/models/settings';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
 export class DataTablesResponse {

@@ -16,13 +16,19 @@ import { ReplaceNullPipe } from './shared/pipes/replace-null.pipe';
 
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { RegisterComponent } from './feature/dashboard/register/register.component';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +38,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
+    CurrencyMaskModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
   ],
   exports: [],

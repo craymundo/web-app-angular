@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReplaceNullPipe } from './pipes/replace-null.pipe';
 
-
 @NgModule({
   imports: [RouterModule, CommonModule],
   exports: [ NotFoundComponent, LayoutComponent, ReplaceNullPipe],
