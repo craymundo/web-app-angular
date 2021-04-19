@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row justify-content-center ">
+    <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10 ">
+      <div class="card d-flex mx-auto ">
+        <div class="row">
+          <div class="col-md-5 col-sm-12 col-xs-12 background-blue p-5">
+            <div class="row justify-content-center align-items-center h-100">
+              <div
+                class="w-75 mx-md-5 mx-1 mx-sm-2 mb-5 mt-4 px-sm-5 px-md-2 px-xl-1 px-2"
+              >
+                <h1 class="title-login text-center">ARC</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 col-xs-12 c2 px-5 pt-5">
+            <form [formGroup]="form" class="px-5 pb-5" (ngSubmit)="loginSesion($event)">
+              <div class="d-flex flex-column">
+                <span>SIGN IN</span>
+                <h3 class="font-weight-bold">Welcome!</h3>
+              </div>
+
+              <div class="form-group mt-5">
+                <label for="exampleInputEmail1">User</label>
+                <input
+                  type="text"
+                  [class]="getClassInputUser()"
+                  formControlName="user"
+                  required
+                />
+
+                <div *ngIf="isShowTextErrorUser()" class="text-error">
+                  {{txtErrorUser}}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+
+                <input
+                  type="password"
+                  [class]="getClassInputPassword()"
+                  formControlName="password"
+                  autocomplete="on"
+                  required
+                />
+
+                <div *ngIf="isShowTextErrorPassword()" class="text-error">
+                  {{txtErrorPassword}}
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6 seccion-remember">
+                  <label>
+                    Remember Me
+                    <input
+                      type="checkbox"
+                    />
+                  </label>
+                </div>
+
+                <div class="form-group col-md-6 text-right">
+                  <a>Forgot Password?</a>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <div class="form-check">
+                   
+                    <label [class]="getClassLabel()" >
+                      <input
+                      class="form-check-input "
+                      type="checkbox"
+                      formControlName="accept"
+                    />
+                      Aceptar los terminos y condiciones
+                    </label>
+                  </div>
+
+                  <div  *ngIf="isShowTextErrorPrivacy()" class="text-error">
+                     Este campo es requerido
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block"  >
+                Sign in
+              </button>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center ">
+    <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10 text-right my-2">
+        <span class="text-register">Don't have an account? <a>SIGN UP</a></span>
+    </div>
+ </div>
+</div>

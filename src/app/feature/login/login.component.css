@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  background: linear-gradient(-180deg, #2faab7, #1c6c83, #0c3655);
+  height: 100vh;
+}
+
+.card {
+  padding: 0px 15px;
+  border: 0px;
+  margin-top: 6rem;
+}
+
+.background-blue {
+  background: #0c3655;
+}
+
+.title-login {
+  font-size: 30px;
+  letter-spacing: 1rem;
+  color: #2faab7;
+}
+
+.seccion-remember input[type="checkbox"] {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.seccion-remember {
+  text-align: left;
+  float: left;
+}
+
+.text-register {
+  color: #fff;
+}
+
+.text-register a {
+  color: #e5a82f;
+}
+
+.text-error {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.color-red {
+  color: #dc3545;
+}
