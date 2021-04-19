@@ -1,1 +1,122 @@
-<p>home</p>
+<table datatable [dtOptions]="dtOptions"  class="row-border hover">
+    <thead>
+      <tr>
+        <th>-</th>
+        <th>ID</th>
+        <th>Primer Nombre</th>
+        <th>Apellido</th>
+        <th>Altura pulgadas</th>
+        <th>Altura Pies</th>
+        <th>Peso</th>
+        <th>Posicion</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="result?.length != 0">
+      <tr *ngFor="let item of result" >
+        <td>
+          <p>
+            <a class="btn btn-primary" (click)="mostrar_modal(item.id)">
+              <i class="fa fa-plus-circle"></i>
+            </a>
+          </p>
+        
+        </td>
+        <td>{{ item.id | replaceNull }}
+         
+        </td>
+        <td>{{ item.first_name | replaceNull}}</td>
+        <td>{{ item.last_name | replaceNull}}</td>
+        <td>{{ item.height_inches| replaceNull }}</td>
+        <td>{{ item.height_feet | replaceNull }}</td>
+        <td>{{ item.weight_pounds| replaceNull }}</td>
+        <td [class]="getColor(item.position)">{{ item.position | replaceNull}}</td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="result?.length == 0">
+      <tr>
+        <td colspan="7" class="no-data-available">No data!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div
+  bsModal
+  #detailTeam="bs-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalle Equipo</h4>
+        <button
+          type="button"
+          class="close"
+          (click)="detailTeam.hide()"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="bolError">No existe el detalle</div>
+        <div *ngIf="!bolError">
+          <div class="form-group row">
+         
+            <div class="col-sm-12">
+              <span>Nombre Equipo: <b>{{detail.equipo}}</b></span>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <span>Conferencia: <b>{{detail.conferencia}}</b></span>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-sm-8">
+              <span>Abreviatura: <b>{{detail.abreviatura}}</b></span>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <span>Nombre Completo: <b>{{detail.nombreCompleto}}</b></span>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            
+            <div class="col-sm-12">
+              <span>División: <b>{{detail.division}}</b></span>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <span>Ciudad: <b> {{detail.ciudad}}</b></span>
+            </div>
+          </div>
+  
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="detailTeam.hide()"
+        >
+          Salir
+        </button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
